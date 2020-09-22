@@ -1,0 +1,13 @@
+#full-screen-nav {
+    display: inline-flex;
+    width: 100%;
+}
+
+.nav-bar.hidden {
+    display: none;
+}
+
+.nav-bar.visible {
+    background-color: black;
+    display: visible;
+}

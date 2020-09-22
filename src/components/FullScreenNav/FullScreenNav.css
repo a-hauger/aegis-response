@@ -1,0 +1,21 @@
+#fullscreen-nav {
+    float: right;
+    padding: 0 10px;
+}
+
+#fullscreen-nav li {
+    transition: ease-in-out 0.25s;
+    color: white;
+    display: inline-block;
+    padding: 0 7.5px;
+}
+
+#fullscreen-nav li:hover{
+    transition: ease-in-out 0.25s;
+    
+    color: red;
+}
+
+#fullscreen-nav li.active {
+    color: yellow;
+}
