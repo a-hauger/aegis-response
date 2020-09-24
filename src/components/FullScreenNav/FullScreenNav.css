@@ -6,16 +6,19 @@
 #fullscreen-nav li {
     transition: ease-in-out 0.25s;
     color: white;
+    text-shadow: 0px 0px 5px white;
     display: inline-block;
     padding: 0 7.5px;
 }
 
 #fullscreen-nav li:hover{
     transition: ease-in-out 0.25s;
-    
+    cursor: crosshair;
     color: red;
+    text-shadow: 0 0 10px red;
 }
 
 #fullscreen-nav li.active {
     color: yellow;
+    text-shadow: 0 0 5px white;
 }

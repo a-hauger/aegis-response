@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #34495e;
+}
+
+.slideshow {
+    width: 700px;
+    height:400px;
+    overflow: hidden;
+}
+
+.middle {
+    position: absolute;
+}
+
+.navButtons {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.circle {
+    border: 2px solid yellow;
+    border-radius: 1em;
+    height: 0.75em;
+    width: 0.75em;
+    margin: 2.5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.circle:hover {
+    background: yellow;
+}
+
+input[name="r"] {
+    position: absolute;
+    visibility: hidden;
+}
+
+.slides {
+    width: 500%;
+    height: 100%;
+    display: flex;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+
+#r1:checked ~ .slide1 {
+    margin-left: 0;
+}
+
+#r1:checked ~ label[for='r1'] {
+    background-color: yellow;
+}
+
+#r2:checked ~ .slide1 {
+    margin-left: -20%;
+}
+
+#r2:checked ~ label[for='r2'] {
+    background-color: yellow;
+}
+
+#r3:checked ~ .slide1 {
+    margin-left: -40%;
+}
+
+#r3:checked ~ label[for='r3'] {
+    background-color: yellow;
+}
+
+#r4:checked ~ .slide1 {
+    margin-left: -60%;
+}
+
+#r4:checked ~ label[for='r4'] {
+    background-color: yellow;
+}
+
+#r5:checked ~ .slide1 {
+    margin-left: -80%;
+}
+
+#r5:checked ~ label[for='r5'] {
+    background-color: yellow;
+}
+
+/* #picture-box {
+    background-color: blue;
+    height: 30em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#arrow-wrapper {
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.arrow {
+    border: solid yellow;
+    border-width: 0 5px 5px 0;
+    border-radius: 5px;
+    height: 2em;
+    width: 2em;
+    padding: 3px;
+    
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+
+    margin: 2em;
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+
+    margin: 2em;
+}
+
+#picture-selector-wrapper {
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.full {
+    background-color: yellow;
+} */
