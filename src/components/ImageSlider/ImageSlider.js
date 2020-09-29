@@ -1,6 +1,7 @@
 import React from 'react';
 import './ImageSlider.css';
 import NavButtonContainer from '../../containers/NavButtonContainer/NavButtonContainer'
+import RadioButtonContainer from '../../containers/RadioButtonContainer/RadioButtonContainer'
 import NavButton from '../NavButton/NavButton';
 
 const img1 = require("./IMG_3763_F.jpg");
@@ -22,7 +23,6 @@ class ImageSlider extends React.Component {
         this.isCheckedCheck = this.isCheckedCheck.bind(this);
 
         this.renderSlides = this.renderSlides.bind(this);
-        this.renderRadioButtons = this.renderRadioButtons.bind(this);
 
         this.images = {
             img1: img1,
@@ -69,17 +69,6 @@ class ImageSlider extends React.Component {
         return(false);
     }
 
-    renderRadioButtons() {
-        return Object.keys(this.images).map(image => {
-            return(<input 
-                        type="radio" 
-                        name="r" 
-                        id={`${image}`}
-                        checked={this.isCheckedCheck(image)}
-                        onChange={this.changePicture}/>)
-        })
-    }
-
     renderSlides() {
         return Object.keys(this.images).map(image => {
             let imageSrc = this.images[image];
@@ -95,9 +84,9 @@ class ImageSlider extends React.Component {
 
             <div className="slideshow middle">
                 <div className="slides">
-                    {this.renderRadioButtons()}
+                    <RadioButtonContainer images={this.images} isChecked={this.isCheckedCheck} changePicture={this.changePicture}/>
                     
-                    <NavButtonContainer images={this.images} />
+                    <NavButtonContainer images={this.images} isChecked={this.isCheckedCheck}/>
 
                     {this.renderSlides()}
 

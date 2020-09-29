@@ -1,0 +1,4 @@
+input[name="r"] {
+    position: absolute;
+    visibility: hidden;
+}

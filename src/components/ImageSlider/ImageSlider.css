@@ -8,11 +8,6 @@
     position: absolute;
 }
 
-input[name="r"] {
-    position: absolute;
-    visibility: hidden;
-}
-
 .slides {
     width: 500%;
     height: 100%;
@@ -43,34 +38,6 @@ input[name="r"] {
 #img5:checked ~ .img1 {
     margin-left: -80%;
 }
-
-/* NAV BUTTON CIRCLES */
-
-/* .navButtons {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-}
-
-.circle {
-    border: 2px solid yellow;
-    border-radius: 1em;
-    height: 0.75em;
-    width: 0.75em;
-    margin: 2.5px;
-    cursor: pointer;
-    transition: 0.5s;
-}
-
-.circle:hover {
-    background: yellow;
-}
-
-.true {
-    background: yellow;
-} */
 
 /* ARROWS */
 

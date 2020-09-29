@@ -1,8 +1,12 @@
 import React, {useState} from 'react';
 import './NavButton.css';
 
-const NavButton = ({imageName}) => {
-    return <label for={imageName} id={imageName} className={`circle`}></label>;
+const NavButton = ({isChecked, imageName}) => {
+    return (<label 
+                for={imageName} 
+                id={imageName} 
+                className={`circle ${isChecked(imageName)}`} >
+                </label>);
 }
 
 export default NavButton;
