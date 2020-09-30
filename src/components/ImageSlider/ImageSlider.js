@@ -2,7 +2,7 @@ import React from 'react';
 import './ImageSlider.css';
 import NavButtonContainer from '../../containers/NavButtonContainer/NavButtonContainer'
 import RadioButtonContainer from '../../containers/RadioButtonContainer/RadioButtonContainer'
-import NavButton from '../NavButton/NavButton';
+import ArrowButtonsContainer from '../../containers/ArrowButtonsContainer/ArrowButtonsContainer';
 
 const img1 = require("./IMG_3763_F.jpg");
 const img2 = require("./IMG_3766_F.jpg");
@@ -21,6 +21,8 @@ class ImageSlider extends React.Component {
         this.moveForward = this.moveForward.bind(this);
         this.moveBackward = this.moveBackward.bind(this);
         this.isCheckedCheck = this.isCheckedCheck.bind(this);
+        this.getChecked = this.getChecked.bind(this);
+        this.setChecked = this.setChecked.bind(this);
 
         this.renderSlides = this.renderSlides.bind(this);
 
@@ -33,22 +35,15 @@ class ImageSlider extends React.Component {
         }
     }
 
-    getCurrentButton(circle) {
-        if(this.state.isChecked === circle.id) {
-            return('current');
-        }
-        return('');
-    }
-
     changePicture(e){
         this.setState({isChecked: e.target.id});
     }
 
     moveForward(e){
-        if(this.state.isChecked[3] == 5){
+        if(e.target.id[3] == 5){
             this.setState({ isChecked: 'img1' });
         } else {
-            const nextImage = `img${parseInt(this.state.isChecked[3]) + 1}`;
+            const nextImage = `img${parseInt(e.target.id[3]) + 1}`;
             this.setState({ isChecked: nextImage })
         }
     }
@@ -62,8 +57,16 @@ class ImageSlider extends React.Component {
         }
     }
 
+    setChecked(imageNum){
+        this.setState({isChecked: imageNum});
+    }
+
+    getChecked(){
+        return(this.state.isChecked);
+    }
+
     isCheckedCheck(imageNum){
-        if(this.state.isChecked == imageNum) {
+        if(this.getChecked() == imageNum) {
             return(true);
         }
         return(false);
@@ -90,10 +93,7 @@ class ImageSlider extends React.Component {
 
                     {this.renderSlides()}
 
-                    <div className="arrow-container">
-                        <i className="arrow left" id={`${this.state.isChecked}`} onClick={this.moveBackward}></i>
-                        <i className="arrow right" id={`${this.state.isChecked}`} onClick={this.moveForward}></i>
-                    </div>
+                    <ArrowButtonsContainer getChecked={this.getChecked} setChecked={this.setChecked}/>
 
                 </div>
             </div>
