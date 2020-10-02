@@ -3,10 +3,11 @@ import './NavButton.css';
 
 const NavButton = ({isChecked, imageName}) => {
     return (<label 
-                for={imageName} 
+                key={imageName}
+                htmlFor={imageName} 
                 id={imageName} 
-                className={`circle ${isChecked(imageName)}`} >
-                </label>);
+                className={`circle ${isChecked() === imageName}`} >
+            </label>);
 }
 
 export default NavButton;

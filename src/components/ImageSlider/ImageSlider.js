@@ -3,6 +3,7 @@ import './ImageSlider.css';
 import NavButtonContainer from '../../containers/NavButtonContainer/NavButtonContainer'
 import RadioButtonContainer from '../../containers/RadioButtonContainer/RadioButtonContainer'
 import ArrowButtonsContainer from '../../containers/ArrowButtonsContainer/ArrowButtonsContainer';
+import SlidesContainer from '../../containers/SlidesContainer/SlidesContainer'
 
 const img1 = require("./IMG_3763_F.jpg");
 const img2 = require("./IMG_3766_F.jpg");
@@ -18,8 +19,6 @@ class ImageSlider extends React.Component {
         }
 
         this.changePicture = this.changePicture.bind(this);
-        this.moveForward = this.moveForward.bind(this);
-        this.moveBackward = this.moveBackward.bind(this);
         this.isCheckedCheck = this.isCheckedCheck.bind(this);
         this.getChecked = this.getChecked.bind(this);
         this.setChecked = this.setChecked.bind(this);
@@ -37,24 +36,6 @@ class ImageSlider extends React.Component {
 
     changePicture(e){
         this.setState({isChecked: e.target.id});
-    }
-
-    moveForward(e){
-        if(e.target.id[3] == 5){
-            this.setState({ isChecked: 'img1' });
-        } else {
-            const nextImage = `img${parseInt(e.target.id[3]) + 1}`;
-            this.setState({ isChecked: nextImage })
-        }
-    }
-
-    moveBackward(e){
-        if(e.target.id[3] == 1){
-            this.setState({ isChecked: 'img5' });
-        } else {
-            const previousImage = `img${parseInt(e.target.id[3] - 1)}`;
-            this.setState({ isChecked: previousImage});
-        }
     }
 
     setChecked(imageNum){
@@ -87,11 +68,11 @@ class ImageSlider extends React.Component {
 
             <div className="slideshow middle">
                 <div className="slides">
-                    <RadioButtonContainer images={this.images} isChecked={this.isCheckedCheck} changePicture={this.changePicture}/>
+                    <RadioButtonContainer images={this.images} getChecked={this.getChecked}/>
                     
-                    <NavButtonContainer images={this.images} isChecked={this.isCheckedCheck}/>
+                    <NavButtonContainer images={this.images} isChecked={this.getChecked}/>
 
-                    {this.renderSlides()}
+                    <SlidesContainer images={this.images} />
 
                     <ArrowButtonsContainer getChecked={this.getChecked} setChecked={this.setChecked}/>
 

@@ -1,14 +1,13 @@
 import React from 'react';
 import './RadioButton.css';
 
-const RadioButton = ({imageName, isChecked, onChange}) => {
+const RadioButton = ({imageName, isChecked}) => {
     return(<input
         key={imageName} 
         type="radio" 
         name="r" 
         id={`${imageName}`}
-        checked={isChecked(imageName)}
-        onChange={onChange} />)
+        checked={isChecked === imageName}/>)
 }
 
 export default RadioButton;

@@ -10,10 +10,9 @@ class NavButtonContainer extends React.Component{
         this.images = this.props.images;
     }
 
-
     renderNavButtons() {
         return Object.keys(this.images).map(image=>{
-            return <NavButton imageName={image} isChecked={this.props.isChecked} />
+            return <NavButton key={image} imageName={image} isChecked={this.props.isChecked} />
         });
     }
 

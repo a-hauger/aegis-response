@@ -1,0 +1,39 @@
+.arrow-container {
+    position: absolute;
+    top: 40%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.arrow {
+    border: solid yellow;
+    border-width: 0 5px 5px 0;
+    border-radius: 5px;
+    height: 2em;
+    width: 2em;
+    padding: 3px;
+    
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+
+    margin: 2em;
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+
+    margin: 2em;
+}
+
+.left:hover {
+    cursor: pointer;
+}
+
+.right:hover {
+    cursor: pointer;
+}

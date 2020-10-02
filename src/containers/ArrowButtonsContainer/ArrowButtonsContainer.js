@@ -5,28 +5,40 @@ class ArrowButtonsContainer extends React.Component {
     constructor(props){
         super(props);
 
-        this.id = this.props.getChecked();
-
+        this.getChecked = this.getChecked.bind(this);
+        this.setChecked = this.setChecked.bind(this);
         this.moveForward = this.moveForward.bind(this);
         this.moveBackward = this.moveBackward.bind(this);
     }
 
-    moveForward(e){
-        if(this.id === 'img5'){
-            const imageNum = 'img1';
-        } else {
-            const imageNum = `img${e.target.id[3]+1}`;
-        }
+    getChecked(){
+        return(this.props.getChecked())
+    }
+
+    setChecked(imageNum){
         this.props.setChecked(imageNum);
     }
 
-    moveBackward(e){
-        if(this.id === 'img1'){
-            const imageNum = 'img5';
+    moveForward(e){
+        let imageNum;
+        if(this.getChecked() === 'img5'){
+            imageNum = 'img1';
         } else {
-            const imageNum = `img${e.target.id[3]-1}`;
+            imageNum = `img${parseInt(e.target.id[3])+1}`;
         }
-        this.props.setChecked(imageNum);
+
+        this.setChecked(imageNum);
+    }
+
+    moveBackward(e){
+        let imageNum;
+        if(this.getChecked() === 'img1'){
+            imageNum = 'img5';
+        } else {
+            imageNum = `img${parseInt(e.target.id[3])-1}`;
+        }
+
+        this.setChecked(imageNum);
     }
 
     render(){
