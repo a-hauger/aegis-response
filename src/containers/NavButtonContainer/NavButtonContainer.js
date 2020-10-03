@@ -6,13 +6,21 @@ class NavButtonContainer extends React.Component{
         super(props);
 
         this.renderNavButtons = this.renderNavButtons.bind(this);
-
+        this.setChecked = this.setChecked.bind(this);
         this.images = this.props.images;
+    }
+
+    setChecked(e){
+        this.props.setChecked(e.target.id);
     }
 
     renderNavButtons() {
         return Object.keys(this.images).map(image=>{
-            return <NavButton key={image} imageName={image} isChecked={this.props.isChecked} />
+            return (
+                <NavButton key={image}
+                           imageName={image} 
+                           getChecked={this.props.getChecked() === image} 
+                           setChecked={this.setChecked.bind(this)} />)
         });
     }
 

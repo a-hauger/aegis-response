@@ -5,7 +5,11 @@ class Slides extends React.Component {
     constructor(props){
         super(props);
 
-        // this.onImgLoad = this.onImgLoad.bind(this);
+        this.onImgLoad = this.onImgLoad.bind(this);
+    }
+
+    onImgLoad({target: img}){
+        console.log(`${this.props.imageName} = ${img.offsetWidth} x ${img.offsetHeight}`)
     }
 
     render(){

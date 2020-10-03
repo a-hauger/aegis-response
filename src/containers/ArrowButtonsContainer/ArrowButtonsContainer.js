@@ -44,8 +44,8 @@ class ArrowButtonsContainer extends React.Component {
     render(){
         return (
             <div className="arrow-container">
-                <ArrowButtons direction="left" id={this.props.getChecked} onClick={this.moveBackward}/>
-                <ArrowButtons direction="right" id={this.props.getChecked} onClick={this.moveForward}/>
+                <ArrowButtons direction="left" id={this.getChecked} onClick={this.moveBackward}/>
+                <ArrowButtons direction="right" id={this.getChecked} onClick={this.moveForward}/>
             </div>
             )
     }

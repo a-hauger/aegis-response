@@ -1,13 +1,17 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './NavButton.css';
 
-const NavButton = ({isChecked, imageName}) => {
-    return (<label 
-                key={imageName}
-                htmlFor={imageName} 
-                id={imageName} 
-                className={`circle ${isChecked() === imageName}`} >
-            </label>);
+class NavButton extends React.Component {
+    render(){
+        return(<label
+                key={this.props.imageName}
+                htmlFor={this.props.imageName}
+                id={this.props.imageName}
+                onClick={this.props.setChecked}
+                onChange={this.props.setChecked}
+                className={`circle ${this.props.getChecked}`}>
+            </label>)
+    }
 }
 
 export default NavButton;
