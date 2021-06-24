@@ -1,0 +1,10 @@
+<nav>
+    <div class="name">
+        <p>Aegis Response</p>
+    </div>
+    <div class="links">
+        <ul *ngFor="let page of pageNames">
+            <li><a routerLink="/${page}">{{page}}</a></li>
+        </ul>
+    </div>
+</nav>

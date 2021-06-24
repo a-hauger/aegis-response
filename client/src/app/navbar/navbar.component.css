@@ -1,0 +1,17 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav div {
+    margin: 0em 1em;
+}
+
+nav li {
+    list-style: none;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+}
