@@ -4,7 +4,7 @@
     </div>
     <div class="links">
         <ul *ngFor="let page of pageNames">
-            <li><a routerLink="/${page}">{{page}}</a></li>
+            <li><a routerLink='/{{page.toLowerCase().split(" ")[0]}}'>{{page}}</a></li>
         </ul>
     </div>
 </nav>

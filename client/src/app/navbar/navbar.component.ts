@@ -10,7 +10,7 @@ export class NavbarComponent implements OnInit {
   pageNames: string[] = [
     "Home",
     "About the Company",
-    "About the Instructor",
+    "Instructor Information",
     "Courses",
     "Contact Us",
   ]
