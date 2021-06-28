@@ -1,6 +1,6 @@
 package handlers
 
-type AccountHandler{
+type AccountHandler struct{
 	Config
 	Client
 }
