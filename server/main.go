@@ -12,7 +12,15 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
-func main() {
+const (
+	host = "localhost"
+	port = 5432
+	user = "postgres"
+	password = "2018_5_22_SunBone"
+	dbname = "aegis_response_dev"
+)
+
+func main() {	
 	logLevel := os.Getenv("LOGLEVEL")
 	if logLevel == "" {
 		logLevel = "1"
@@ -24,8 +32,6 @@ func main() {
 	zerolog.SetGlobalLevel(zerolog.Level(intLevel))
 
 	config := models.Config{}
-	accountClient := clients.CreateAccountClient(config config.AccountConnection)
-	accountH := handlers.NewAccountHandler(accountClient)
 
 	configErr := configor.
 		New(&configor.Config{
@@ -43,6 +49,11 @@ func main() {
 		panic("Error while loading config.")
 	}
 
+	accountClient := clients.CreateAccountClient(config config.AccountConnection)
+	defer accountClient.Close()
+	
+	accountH := handlers.NewAccountHandler(accountClient)
+	
 	r := gin.New()
 
 	r.GET("/healthz")
