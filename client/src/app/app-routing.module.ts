@@ -5,6 +5,7 @@ import { ContactPageComponent } from './contact-page/contact-page.component';
 import { CoursesPageComponent } from './courses-page/courses-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { InstructorPageComponent } from './instructor-page/instructor-page.component';
+import { SignupPageComponent } from './signup-page/signup-page.component';
 
 const routes: Routes = [
   { path: 'home', component: HomePageComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'instructor', component: InstructorPageComponent },
   { path: 'courses', component: CoursesPageComponent},
   { path: 'contact', component: ContactPageComponent},
+  { path: 'signup', component: SignupPageComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 

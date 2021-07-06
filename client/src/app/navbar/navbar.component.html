@@ -3,8 +3,8 @@
         <p>Aegis Response</p>
     </div>
     <div class="links">
-        <ul *ngFor="let page of pageNames">
-            <li><a routerLink='/{{page.toLowerCase().split(" ")[0]}}'>{{page}}</a></li>
+        <ul *ngFor="let page of pages">
+            <li><a routerLink='/{{page.link}}'>{{page.name}}</a></li>
         </ul>
     </div>
 </nav>
